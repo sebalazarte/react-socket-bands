@@ -3,32 +3,11 @@ import React, { useContext } from 'react'
 import { BandList } from '../components/BandList';
 import { BandAdd } from '../components/BandAdd';
 import { SocketContext } from '../context/SoketContext';
+import { BandChart } from '../components/BandChart'
 
 export const HomePage = () => {
 
   const { online } = useContext(SocketContext);
-
-  // const [bands, setBands] = useState([]);
-  // const { socket, online } = useSocket('http://localhost:8080');
-
-
-  // useEffect(() => {
-  //   socket.on('current-bands', (bands) => {
-  //     setBands(bands);
-  //   })
-  // }, [socket])
-
-  // const votar = (id) => {
-  //   socket.emit('votar-banda', id);
-  // }
-
-  // const borrar = (id) => {
-  //   socket.emit('borrar-banda', id);
-  // }
-
-  // const cambiarNombre = (id, nombre) => {
-  //   socket.emit('cambiar-nombre-banda', { id, nombre });
-  // }
 
   return (
     <div className="container">
@@ -47,6 +26,12 @@ export const HomePage = () => {
 
       <h1>BandNames</h1>
       <hr />
+
+      <div className="row">
+        <div className="col">
+          <BandChart />
+        </div>
+      </div>
 
       <div className="row">
         <div className="col-8">
